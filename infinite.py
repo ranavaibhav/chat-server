@@ -1,3 +1,3 @@
 while(True):
- b = input("enter the number=")
- print (b)
+    b = input("enter the number=")
+    print (b)
