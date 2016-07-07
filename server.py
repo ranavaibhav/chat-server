@@ -14,4 +14,10 @@ while True:
 	print ("got a connection from %s" % str(addr))
 	currenttime = time.ctime(time.time()) + "\r\n"
 	clientsocket.send(currenttime.encode('ascii'))
+while True:
+	a= raw_input('message: ')
+	clientsocket.send(a)
+	if a == 'end'
+	    break
+	    print 'bbye', currenttime = time.ctime(time.time()) + "\r\n"
 	clientsocket.close()
