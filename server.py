@@ -4,7 +4,7 @@ import time
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = socket.gethostname()
-port=8000
+port=8001
 
 serversocket.bind((host,port))
 serversocket.listen(5)
@@ -15,16 +15,16 @@ currenttime = time.ctime(time.time()) + "\r\n"
 clientsocket.send(currenttime.encode('ascii'))
 
 while True:
-    b= clientsocket.recv(16)
+    b= clientsocket.recv(1600)
 
-    print "recieved message:",b
+    print ('received message:', b.decode())
     
-    a= raw_input('message: ')
+    a= input('message: ')
 
-    clientsocket.send(a)
+    clientsocket.send(a.encode())
     
     if a == 'end':
-        print 'bbye'
+        print ('bbye')
         currenttime = time.ctime(time.time()) + "\r\n"
         clientsocket.close()
         break
