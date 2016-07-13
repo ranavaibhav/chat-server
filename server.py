@@ -23,8 +23,10 @@ while True:
 
     clientsocket.send(a.encode())
     
-    if a == 'end':
+    if b.decode() == 'end':
         print ('bbye')
         currenttime = time.ctime(time.time()) + "\r\n"
-        clientsocket.close()
         break
+    if a == 'end':
+        print ('bbye')
+clientsocket.close()
