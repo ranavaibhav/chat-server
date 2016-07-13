@@ -16,8 +16,10 @@ while True:
     c.send(a.encode())
     b= c.recv(1600)
     print ('recieved message:', b.decode())
-    if a == 'end':
+    if b.decode() == 'end':
         print ("bbye")
-        c.close()
         print("time is %s" % tm.decode('ascii'))
         break
+    if a == 'end':
+        print('bbye')
+c.close()
